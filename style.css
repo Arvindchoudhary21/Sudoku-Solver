@@ -1,24 +1,21 @@
-.Header{
+.Header {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 60px;
     background-color: rgb(208, 241, 24);
-} 
+}
 
-body {
-    background-color: lightblue;
-  }
-
-#logo{
+#logo {
     width: 100px;
     height: 100px;
 }
-#logo img{
+
+#logo img {
     width: 100%;
 }
 
-#name{
+#name {
     width: 75%;
     display: flex;
     align-items: center;
@@ -26,7 +23,11 @@ body {
     font-weight: bold;
 }
 
-.Heading{
+body {
+    background-color:#e3f5ff;
+}
+
+.Heading {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -36,20 +37,20 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.sudoku_grid{
+.sudoku_grid {
     display: flex;
     flex-direction: row;
     max-width: 578px;
     flex-wrap: wrap;
 
-    margin: 10px auto ;
+    margin: 10px auto;
 }
 
-.sudoku_grid div{
-    display:  flex;
+.sudoku_grid div {
+    display: flex;
     align-items: center;
     justify-content: center;
-    
+
     width: 60px;
     height: 60px;
     /* color: rgb(255, 255, 255); */
@@ -58,14 +59,15 @@ body {
     box-sizing: border-box;
 }
 
-.Buttons{   
+.Buttons {
     display: flex;
     justify-content: center;
-    width: 100%;    
+    width: 100%;
     margin-bottom: 40px;
 }
 
-#GetPuzzle,#SolvePuzzle{
+#GetPuzzle,
+#SolvePuzzle {
     display: inline-block;
     text-decoration: none;
     color: #fff;
@@ -77,49 +79,54 @@ body {
     border: none;
     /* box-shadow:  inset 0px 1px 0px #ef0b0b; */
     margin-right: 15px;
-    border-radius:10px;  
+    border-radius: 10px;
 
 }
 
-.box1{
-    background-color: #06f3db;
-    border: 2px solid  rgb(0, 0, 0);
+.box1 {
+    background-color: #ffe7db;
+    /* border: 2px solid rgb(0, 0, 0); */
+    border: 1px dotted;
 }
 
-.box1:hover{
+.box1:hover {
     background-color: #f585c2;
     color: black;
 }
 
-.box2{
-    background-color: #f3f92e;
-    border: 2px solid  rgb(0, 0, 0);
+.box2 {
+    background-color: #ffe7db;
+    /* border: 2px solid rgb(0, 0, 0); */
+    border: 1px dotted;
 }
-.box2:hover{
+
+.box2:hover {
     background-color: red;
 }
 
-.box3{
-    background-color: #028a0f;
-    border: 2px solid  rgb(0, 0, 0);
+.box3 {
+    background-color: #ffe7db;
+    border: 2px solid rgb(0, 0, 0);
+    border: 1px dotted;
 }
-.box3:hover{
+
+.box3:hover {
     background-color: #f7a151;
     color: black
 }
 
-.bl{
-    border-left: 4px solid black;
+.bl {
+    border-left: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
 }
 
-.bb{
-    border-bottom: 4px solid black;
+.bb {
+    border-bottom: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
 }
 
-.br{
-    border-right: 4px solid black;
+.br {
+    border-right: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
 }
 
-.bt{
-    border-top: 4px solid black;
+.bt {
+    border-top: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
 }

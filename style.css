@@ -59,6 +59,7 @@ body {
     box-sizing: border-box;
 }
 
+/* buttons */
 .Buttons {
     display: flex;
     justify-content: center;
@@ -68,20 +69,37 @@ body {
 
 #GetPuzzle,
 #SolvePuzzle {
-    display: inline-block;
-    text-decoration: none;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
     color: #fff;
-    font-weight: bold;
-    background-color: #0a0a23;
-    padding: 10px 35px;
-    font-size: 24px;
-    /* border: 1px solid #03f699; */
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align:center;
     border: none;
-    /* box-shadow:  inset 0px 1px 0px #ef0b0b; */
-    margin-right: 15px;
-    border-radius: 10px;
+    background-size: 300% 100%;
 
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover.color-2 {
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+}
+/* buttons ens */
+
 
 .box1 {
     background-color: #ffe7db;
@@ -90,7 +108,7 @@ body {
 }
 
 .box1:hover {
-    background-color: #f585c2;
+    background-color:rosybrown;
     color: black;
 }
 

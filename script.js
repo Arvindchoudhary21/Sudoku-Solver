@@ -33,7 +33,7 @@ GetPuzzle.onclick = function () {
 		console.log(response)
 		board = response.newboard.grids[0].value;
 		console.log(board);
-		
+		console.log(board[0][0]);
 		FillBoard(board)
 	}
 	xhrRequest.open('get', 'https://sudoku-api.vercel.app/api/dosuku?query={newboard(limit:1){grids{value}}}')

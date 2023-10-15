@@ -31,12 +31,10 @@ GetPuzzle.onclick = function () {
 	xhrRequest.onload = function () {
 		var response = JSON.parse(xhrRequest.response)
 		console.log(response)
-		board = response.newboard.grids[0].value;
-		console.log(board);
-		console.log( board[0][0]);
+		board = response.board
 		FillBoard(board)
 	}
-	xhrRequest.open('get', 'https://sudoku-api.vercel.app/api/dosuku?query={newboard(limit:1){grids{value}}}')
+	xhrRequest.open('get', 'https://sugoku.onrender.com/board?difficulty=easy')
 	//we can change the difficulty of the puzzle the allowed values of difficulty are easy, medium, hard and random
 	xhrRequest.send()
 }
@@ -83,7 +81,7 @@ function sudukoSolver(board,row,col,n) {
 	  return sudukoSolver(board, row + 1, 0, n);
 	}
 	// if cell is already filled
-	if (board[row][col] != '') {
+	if (board[row][col] != 0) {
 	  return sudukoSolver(board, row, col + 1, n);
 	}
 	for (let val = 1; val <= 9; val++) {

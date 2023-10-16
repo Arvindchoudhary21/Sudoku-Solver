@@ -24,23 +24,24 @@
 }
 
 body {
-    background-color:#e3f5ff;
+    background-color: #e3f5ff;
     margin: 0px;
     padding: 0px;
 }
 
 .Heading {
     width: 100%;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: bolder;
-    font-family: Arial, sans-serif;
-    background-color: #fff0c9;
+    font-family: 'Sacramento', cursive;
+    background-color: #e3dcff;
+    color:#434f5b;
 }
+
 
 .sudoku_grid {
     display: flex;
@@ -81,7 +82,7 @@ body {
     cursor: pointer;
     margin: 10px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
@@ -101,8 +102,10 @@ body {
 }
 
 .btn-hover.color-2 {
-    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);
+    box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
 }
+
 /* buttons ens */
 
 
@@ -113,7 +116,7 @@ body {
 }
 
 .box1:hover {
-    background-color:#f7a151;
+    background-color: #f7a151;
     color: black;
 }
 
@@ -139,17 +142,21 @@ body {
 }
 
 .bl {
-    border-left: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
+    border-left: 2px solid black;
+    /* pehle 4px tha abhi 2 kr diya */
 }
 
 .bb {
-    border-bottom: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
+    border-bottom: 2px solid black;
+    /* pehle 4px tha abhi 2 kr diya */
 }
 
 .br {
-    border-right: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
+    border-right: 2px solid black;
+    /* pehle 4px tha abhi 2 kr diya */
 }
 
 .bt {
-    border-top: 2px solid black;/* pehle 4px tha abhi 2 kr diya */
+    border-top: 2px solid black;
+    /* pehle 4px tha abhi 2 kr diya */
 }

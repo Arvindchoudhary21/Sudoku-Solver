@@ -48,7 +48,7 @@ body {
     flex-direction: row;
     max-width: 578px;
     flex-wrap: wrap;
-
+    justify-content: center;
     margin: 10px auto;
 }
 
@@ -69,18 +69,20 @@ body {
 .Buttons {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    align-items: center;
+    gap: 10px;;
 }
 
-#GetPuzzle,
+#GetPuzzle,#GetPuzzle2,
 #SolvePuzzle {
     width: 200px;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 10px;
+    /* margin: 5px; */
     height: 55px;
     text-align: center;
     border: none;

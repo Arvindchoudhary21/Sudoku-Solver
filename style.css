@@ -88,6 +88,7 @@ body {
     height: 55px;
     text-align: center;
     justify-items: center;
+    justify-content: center;
     border: none;
     background-size: 300% 100%;
 

@@ -10,8 +10,8 @@ for (let i = 0; i < 9; i++) {
 let cnt = 0;
 
 let board = [[], [], [], [], [], [], [], [], []];
-for(let i=0; i<9; i++){
-	for(let j=0; j<9; j++){
+for (let i = 0; i < 9; i++) {
+	for (let j = 0; j < 9; j++) {
 		board[i][j] = 0;
 	}
 }
@@ -66,12 +66,15 @@ GetPuzzle.onclick = function () {
 
 
 const editableDivs = document.querySelectorAll(".clickable");
+// we only input in div when custom input button is clicked that's why we have to maintain a flag when the div can take input and when not ok that's why I used this flag 
+let isHandleKeyDownNeedToExecute = false;
+
 function handleKeyDown(event) {
 	// Get the key code from the event
 	const keyCode = event.keyCode;
 
 	// Check if the pressed key is a number (0-9)
-	if (keyCode >= 48 && keyCode <= 57) {
+	if (keyCode >= 48 && keyCode <= 57 && isHandleKeyDownNeedToExecute === true) {
 
 		// Find the currently focused div (the one that has focus)
 		const focusedDiv = document.activeElement;
@@ -83,8 +86,7 @@ function handleKeyDown(event) {
 		board[row][col] = (keyCode - 49 + 1)
 		cnt++;
 	}
-	else if(keyCode >= 97 && keyCode <= 109)
-	{
+	else if (keyCode >= 97 && keyCode <= 109 && isHandleKeyDownNeedToExecute === true) {
 		const focusedDiv = document.activeElement;
 		focusedDiv.innerHTML = (keyCode - 97 + 1);
 		let number = focusedDiv.id;
@@ -94,17 +96,20 @@ function handleKeyDown(event) {
 		board[row][col] = (keyCode - 97 + 1)
 		cnt++;
 	}
-	else if(keyCode == 8 || keyCode == 37 || keyCode == 39){
+	else if (keyCode == 8 || keyCode == 37 || keyCode == 39 && isHandleKeyDownNeedToExecute === true) {
 		board[row][col] = 0;
 		const focusedDiv = document.activeElement;
 		focusedDiv.innerHTML = '';
 	}
+	// console.log(cnt);
 	// Prevent the default behavior of the key (e.g., typing the key in the div)
 	event.preventDefault();
 }
 
+
 GetPuzzle2.onclick = function () {
 	UnFillBoard();
+	isHandleKeyDownNeedToExecute = true;
 	cnt = 0;
 	// const editableDivs = document.querySelectorAll(".clickable");
 	editableDivs.forEach((element) => {
@@ -115,12 +120,13 @@ GetPuzzle2.onclick = function () {
 // so we have to stop this. this a will count 
 let a = 0;
 SolvePuzzle.onclick = () => {
-	if(cnt < 17){
-		// UnFillBoard();
-		alert("Wrong Input! Fill atleast 17 Cells.")
+	if (cnt < 17) {
+		UnFillBoard();
+		alert("Wrong Input! Fill atleast 17 cells and fill the cells correctly.")
 		cnt = 0;
+		isHandleKeyDownNeedToExecute = false;
 	}
-	else{
+	else {
 		a = 0;
 		sudukoSolver(board, 9);
 		FillBoard(board);
@@ -129,9 +135,8 @@ SolvePuzzle.onclick = () => {
 
 function sudukoSolver(board, n) {
 
-	let ans = solve(board, n , 0)
-	if(ans == false)
-	{
+	let ans = solve(board, n, 0)
+	if (ans == false) {
 		UnFillBoard();
 		a = 0;
 		alert("Wrong input typed! Fill again.");
@@ -146,10 +151,10 @@ function isvalid(board, row, col, num) {
 	return true;
 }
 
-function solve(board, n , fcnt) {
+function solve(board, n, fcnt) {
 	a++;
 	// console.log(a);
-	if(a >= 1000000) return false; //for infinite loop
+	if (a >= 1000000) return false; //for infinite loop
 	for (let i = 0; i < n; i++) {
 		for (let j = 0; j < n; j++) {
 			if (board[i][j] === 0) {
@@ -157,7 +162,7 @@ function solve(board, n , fcnt) {
 					if (isvalid(board, i, j, num) == true) {
 						board[i][j] = num;
 
-						if (solve(board, n , fcnt+1) == true) {
+						if (solve(board, n, fcnt + 1) == true) {
 							return true;
 						}
 
